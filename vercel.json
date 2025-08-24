@@ -7,42 +7,54 @@
         }
     },
     "routes": [
-        {
-            "src": "/build/(.*)",
-            "dest": "/public/build/"
-        },
-        {
-            "src": "/resources/(.*)",
-            "dest": "/public/resources/"
-        },
-        {
-            "src": "/images/ratings/(.*)",
-            "dest": "/public/images/ratings/"
-        },
-        {
-            "src": "/images/(.*)",
-            "dest": "/public/images/"
-        },
-        {
-            "src": "/theme/(.*)",
-            "dest": "/public/theme/"
-        },
-        {
-            "src": "/favicon/(.*)",
-            "dest": "/public/favicon/"
-        },
-        {
-            "src": "/plugins/(.*)",
-            "dest": "/public/plugins/"
-        },
-        {
-            "src": "/logo/(.*)",
-            "dest": "/public/logo/"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
+{
+      "src": "/build/(.*)\\.js",
+      "dest": "/public/build/$1.js",
+      "headers": { "Content-Type": "application/javascript; charset=utf-8" }
+    },
+    {
+      "src": "/build/(.*)\\.css",
+      "dest": "/public/build/$1.css",
+      "headers": { "Content-Type": "text/css; charset=utf-8" }
+    },
+    {
+      "src": "/plugins/(.*)\\.js",
+      "dest": "/public/plugins/$1.js",
+      "headers": { "Content-Type": "application/javascript; charset=utf-8" }
+    },
+    {
+      "src": "/plugins/(.*)\\.css",
+      "dest": "/public/plugins/$1.css",
+      "headers": { "Content-Type": "text/css; charset=utf-8" }
+    },
+    {
+      "src": "/resources/(.*)",
+      "dest": "/public/resources/$1"
+    },
+    {
+      "src": "/images/ratings/(.*)",
+      "dest": "/public/images/ratings/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/public/images/$1"
+    },
+    {
+      "src": "/theme/(.*)",
+      "dest": "/public/theme/$1"
+    },
+    {
+      "src": "/favicon/(.*)",
+      "dest": "/public/favicon/$1"
+    },
+    {
+      "src": "/logo/(.*)",
+      "dest": "/public/logo/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
     ],
     "env": {
         "APP_ENV": "production",
